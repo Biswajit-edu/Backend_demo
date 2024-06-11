@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block  title %}
+Contact Page
+{% endblock %}
+
+
+{% block  content %}
+<h1 class=' bg-indigo-500 text-2xl'>Contact Us</h1>
+<p class='text-lg font-bold text-green-400'> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, odit.
+</p>
+<p>My name is {{nm}}</p>
+
+<form class=" text-white w-[60%] flex flex-col gap-2 m-10", method="POST">
+    {% csrf_token %}
+    <div class="flex flex-col sm:flex-row gap-2 w-full">
+      <input type="text" name="f_name" class=" bg-[#393943] focus:bg-black focus:outline-[#25D765] focus:outline-none sm:w-1/2 h-10 lg:h-12 p-4 font-semibold font-josefin " placeholder="First Name" />
+      <input type="text" name="s_name" class=" bg-[#393943] focus:bg-black focus:outline-[#25D765] focus:outline-none sm:w-1/2 h-10 lg:h-12 p-4 font-semibold font-josefin" placeholder="Last Name" />
+    </div>
+    <input type="email" name="email" class=" bg-[#393943] focus:bg-black focus:outline-[#25D765] focus:outline-none h-10 lg:h-12 p-4 font-semibold font-josefin" placeholder="Email" />
+    <input type="phone" name="phone" class=" bg-[#393943] focus:bg-black focus:outline-[#25D765] focus:outline-none h-10 lg:h-12 p-4 font-semibold font-josefin" placeholder="Phone" />
+    <textarea class=" bg-[#393943] focus:bg-black focus:outline-[#25D765] focus:outline-none p-4 font-semibold font-josefin" name="message" id="" cols="20" rows="4" placeholder="Message"></textarea>
+    <div class=" cursor-pointer bg-gradient-to-l from-[#25D765] to-[#092579]  hover:bg-gradient-to-r from-[#25D765] to-[#092579] h-12 w-[200px] font-bold font-barlow flex justify-between p-2 pl-4">
+      <input type="submit" value="SUBMIT" />
+    </div>
+  </form>
+
+  <p>Your good name is {{gname}}</p>
+
+{% endblock %}
